@@ -1,6 +1,6 @@
 # telecom-charsets
 
-[![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg?style=flat)](https://opensource.org/licenses/MIT) [![GitHub version](https://badge.fury.io/gh/brake%2Ftelecom-charsets.svg)](https://badge.fury.io/gh/brake%2Ftelecom-charsets) [![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.github.brake.threegpp/charset/badge.svg?style=flat-square)](https://maven-badges.herokuapp.com/maven-central/com.github.brake.threegpp/charset) ![Java version 1.7+](https://img.shields.io/badge/Java_version-1.7+-green.svg?style=flat-square)
+[![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg?style=flat)](https://opensource.org/licenses/MIT) [![GitHub version](https://badge.fury.io/gh/brake%2Ftelecom-charsets.svg)](https://badge.fury.io/gh/brake%2Ftelecom-charsets) [![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.github.brake.threegpp/telecom-charsets/badge.svg?style=flat-square)](https://maven-badges.herokuapp.com/maven-central/com.github.brake.threegpp/telecom-charsets) ![Java version 1.7+](https://img.shields.io/badge/Java_version-1.7+-green.svg?style=flat-square)
 
 A set of Java™ [Charset](https://docs.oracle.com/javase/8/docs/api/java/nio/charset/Charset.html) implementations supporting various codecs used in telecommunications (GSM/UCS2)
 
@@ -12,7 +12,7 @@ A set of Java™ [Charset](https://docs.oracle.com/javase/8/docs/api/java/nio/ch
 * [Download](#download)
 * [Usage](#usage)
 * [License](#license)
-* [Alternatives](#alternatives)
+* [Related links](#related-links)
 
 ## Purpose
 
@@ -39,12 +39,28 @@ Java 1.7 or higher.
 
 ## Download
 
+Direct link to [Maven Central](https://oss.sonatype.org/service/local/repositories/releases/content/com/github/brake/threegpp/telecom-charsets/1.0.0/telecom-charsets-1.0.0.jar) for case if we decide to 
+use library as described in [Usage, part 1](#usage).
+
+Gradle:
+```gradle
+compile 'com.github.brake.threegpp:telecom-charsets:1.0.0'
+```
+
+Maven:
+```xms
+<dependency>
+  <groupId>com.github.brake.threegpp</groupId>
+  <artifactId>telecom-charsets</artifactId>
+  <version>1.0.0</version>
+</dependency>
+```
 
 ## Usage
 
 There are two ways to use this library.
 
-1. Download a precompiled `jar` file and place it to _extension_ directory of your `JRE`.
+1. [Download](https://oss.sonatype.org/service/local/repositories/releases/content/com/github/brake/threegpp/telecom-charsets/1.0.0/telecom-charsets-1.0.0.jar) a precompiled `jar` file and place it to _extension_ directory of your `JRE`.
 
    After that you, without further configuration, can just write and run code like this:
    ```java
@@ -60,6 +76,14 @@ There are two ways to use this library.
    - [One more resource for Mac OS](https://www.quora.com/Where-is-the-jre-lib-ext-folder-found-in-OS-X-for-Java)
    
 1. Configure a _dependency_ in your project as you are usually doing for external libraries
+
+   ```java
+   import threegpp.charset.ucs2.UCS2Charset80;
+
+   Charset cs80 = new UCS2Charset80();
+   byte [] telecomText = "Some Text".getBytes(cs80);
+
+   ```
    
 
 ## Licence
@@ -69,7 +93,10 @@ Copyright © 2017-2018 Constantin Roganov
 Distributed under the [MIT License](https://opensource.org/licenses/MIT).
 
 
-## Alternatives
+## Related links
 
-TBD
+* Some charset encoding/decoding related [code](https://github.com/twitter/cloudhopper-commons/tree/master/ch-commons-charset/src/main/java/com/cloudhopper/commons/charset)
+* [From code.google.com, GSM](https://code.google.com/archive/p/gsm-7-bit-encoder-decoder/downloads)
+* [Useful SO answer regarding UCS2 (80th)](https://stackoverflow.com/questions/20898074/ascii-to-ucs2-encoding-java-code)
+* [AOSP](https://github.com/aosp-mirror/platform_frameworks_base/blob/master/telephony/java/com/android/internal/telephony/GsmAlphabet.java)
 
