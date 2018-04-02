@@ -9,6 +9,7 @@ sourceCompatibility = 1.7
 
 def sonatypeRepositoryUrl = "https://oss.sonatype.org/service/local/staging/deploy/maven2/"
 def artifact = 'telecom-charsets'
+def moduleName = 'telecom_charsets'
 
 repositories {
     mavenCentral()
@@ -45,7 +46,7 @@ javadoc {
 jar {
     manifest {
         attributes(
-            "Automatic-Module-Name": project.group + '.' + artifact
+            "Automatic-Module-Name": project.group + '.' + moduleName
         )
     }
 }
