@@ -2,8 +2,13 @@ group 'com.github.brake.threegpp'
 version '1.0.0'
 
 apply plugin: 'java'
+apply plugin: 'maven'
+apply plugin: 'signing'
 
 sourceCompatibility = 1.7
+
+def sonatypeRepositoryUrl = "https://oss.sonatype.org/service/local/staging/deploy/maven2/"
+def artifact = 'telecom-charsets'
 
 repositories {
     mavenCentral()
@@ -12,3 +17,80 @@ repositories {
 dependencies {
     testCompile group: 'junit', name: 'junit', version: '4.12'
 }
+
+task javadocJar(type: Jar, dependsOn: javadoc) {
+    classifier = 'javadoc'
+    from tasks.javadoc.destinationDir
+}
+
+task sourcesJar(type: Jar) {
+    from sourceSets.main.allSource
+    classifier = 'sources'
+}
+
+artifacts {
+    archives jar
+    archives javadocJar
+    archives sourcesJar
+}
+
+signing {
+    sign configurations.archives
+}
+
+javadoc {
+    options.encoding = 'UTF-8'
+}
+
+jar {
+    manifest {
+        attributes(
+            "Automatic-Module-Name": project.group + '.' + artifact
+        )
+    }
+}
+
+uploadArchives {
+    repositories {
+        mavenDeployer {
+            beforeDeployment { MavenDeployment deployment -> signing.signPom(deployment) }
+            repository(url: sonatypeRepositoryUrl) {
+                authentication(userName: sonatypeUsername, password: sonatypePassword)
+            }
+
+            pom.project {
+                groupId = project.group
+                artifactId artifact
+                version version
+                name = project.name
+
+                description 'A set of Java™ Charset implementations supporting various codecs used in telecommunications'
+                url 'https://github.com/brake/telecom-charsets'
+
+                inceptionYear '2017'
+                licenses {
+                    license {
+                        name 'The MIT License'
+                        url 'https://opensource.org/licenses/MIT'
+                        distribution 'repo'
+                    }
+                }
+                scm {
+                    url 'https://github.com/brake/telecom-charsets'
+                    connection 'scm:git:git@github.com:brake/telecom-charsets.git'
+                    
+                    developerConnection 'scm:git:git@github.com:brake/telecom-charsets.git'
+                }
+
+                developers {
+                    developer {
+                        id 'brake'
+                        name 'Constantin Roganov'
+                        url 'https://github.com/brake'
+                    }
+                }
+            }
+        }
+    }
+}
+ 
