@@ -75,7 +75,7 @@ There are two ways to use this library.
    - [Apple site (Mac OS specific)](https://developer.apple.com/library/content/qa/qa1170/_index.html) 
    - [One more resource for Mac OS](https://www.quora.com/Where-is-the-jre-lib-ext-folder-found-in-OS-X-for-Java)
    
-1. Configure a _dependency_ in your project as you are usually doing for external libraries ([gradle](#gradle) [Maven](#maven))
+1. Configure a _dependency_ in your project as you are usually doing for external libraries ([Gradle](#gradle) or [Maven](#maven))
 
    ```java
    import threegpp.charset.ucs2.UCS2Charset80;
