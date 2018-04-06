@@ -1,8 +1,6 @@
 # telecom-charsets
 
-[![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg?style=flat)](https://opensource.org/licenses/MIT) [![GitHub version](https://badge.fury.io/gh/brake%2Ftelecom-charsets.svg)](https://badge.fury.io/gh/brake%2Ftelecom-charsets) [![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.github.brake.threegpp/telecom-charsets/badge.svg?style=flat-square)](https://maven-badges.herokuapp.com/maven-central/com.github.brake.threegpp/telecom-charsets) ![Java version 1.7+](https://img.shields.io/badge/Java_version-1.7+-green.svg?style=flat-square)
-
-[![Build Status](https://travis-ci.org/brake/telecom-charsets.svg?branch=master)](https://travis-ci.org/brake/telecom-charsets) [![Maintainability](https://api.codeclimate.com/v1/badges/f803b962dd656d221032/maintainability)](https://codeclimate.com/github/brake/telecom-charsets/maintainability) [![Test Coverage](https://api.codeclimate.com/v1/badges/f803b962dd656d221032/test_coverage)](https://codeclimate.com/github/brake/telecom-charsets/test_coverage)
+[![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg?style=flat)](https://opensource.org/licenses/MIT) [![GitHub version](https://badge.fury.io/gh/brake%2Ftelecom-charsets.svg)](https://badge.fury.io/gh/brake%2Ftelecom-charsets) [![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.github.brake.threegpp/telecom-charsets/badge.svg?style=flat-square)](https://maven-badges.herokuapp.com/maven-central/com.github.brake.threegpp/telecom-charsets) ![Java version 1.7+](https://img.shields.io/badge/Java_version-1.7+-green.svg?style=flat-square) [![Build Status](https://travis-ci.org/brake/telecom-charsets.svg?branch=master)](https://travis-ci.org/brake/telecom-charsets) [![Maintainability](https://api.codeclimate.com/v1/badges/f803b962dd656d221032/maintainability)](https://codeclimate.com/github/brake/telecom-charsets/maintainability) [![codecov](https://codecov.io/gh/brake/telecom-charsets/branch/master/graph/badge.svg)](https://codecov.io/gh/brake/telecom-charsets)
 
 A set of Java™ [Charset](https://docs.oracle.com/javase/8/docs/api/java/nio/charset/Charset.html) implementations supporting various codecs used in telecommunications (GSM/UCS2)
 
@@ -44,12 +42,12 @@ Java 1.7 or higher.
 Direct link to [Maven Central](https://oss.sonatype.org/service/local/repositories/releases/content/com/github/brake/threegpp/telecom-charsets/1.0.0/telecom-charsets-1.0.0.jar) for case if we decide to 
 use library as described in [Usage, part 1](#usage).
 
-Gradle:
+#### Gradle:
 ```gradle
 compile 'com.github.brake.threegpp:telecom-charsets:1.0.0'
 ```
 
-Maven:
+#### Maven:
 ```xms
 <dependency>
   <groupId>com.github.brake.threegpp</groupId>
@@ -77,7 +75,7 @@ There are two ways to use this library.
    - [Apple site (Mac OS specific)](https://developer.apple.com/library/content/qa/qa1170/_index.html) 
    - [One more resource for Mac OS](https://www.quora.com/Where-is-the-jre-lib-ext-folder-found-in-OS-X-for-Java)
    
-1. Configure a _dependency_ in your project as you are usually doing for external libraries
+1. Configure a _dependency_ in your project as you are usually doing for external libraries ([gradle](#gradle) [Maven](#maven))
 
    ```java
    import threegpp.charset.ucs2.UCS2Charset80;
