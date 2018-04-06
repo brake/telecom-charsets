@@ -2,3 +2,14 @@ install: gradle wrapper --gradle-version 4.6
 language: java
 jdk:
   - oraclejdk8
+env:
+  global:
+    - CC_TEST_REPORTER_ID=2476c64e4c847b6fcec579ad9e22027477c69af185cddd5735dfe8113d8aecac
+before_script:
+  - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
+  - chmod +x ./cc-test-reporter
+  - ./cc-test-reporter before-build
+script:
+  - bundle exec rspec
+after_script:
+  - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
