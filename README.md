@@ -2,6 +2,8 @@
 
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg?style=flat)](https://opensource.org/licenses/MIT) [![GitHub version](https://badge.fury.io/gh/brake%2Ftelecom-charsets.svg)](https://badge.fury.io/gh/brake%2Ftelecom-charsets) [![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.github.brake.threegpp/telecom-charsets/badge.svg?style=flat-square)](https://maven-badges.herokuapp.com/maven-central/com.github.brake.threegpp/telecom-charsets) ![Java version 1.7+](https://img.shields.io/badge/Java_version-1.7+-green.svg?style=flat-square)
 
+[![Build Status](https://travis-ci.org/brake/telecom-charsets.svg?branch=master)](https://travis-ci.org/brake/telecom-charsets) [![Maintainability](https://api.codeclimate.com/v1/badges/f803b962dd656d221032/maintainability)](https://codeclimate.com/github/brake/telecom-charsets/maintainability) [![Test Coverage](https://api.codeclimate.com/v1/badges/f803b962dd656d221032/test_coverage)](https://codeclimate.com/github/brake/telecom-charsets/test_coverage)
+
 A set of Java™ [Charset](https://docs.oracle.com/javase/8/docs/api/java/nio/charset/Charset.html) implementations supporting various codecs used in telecommunications (GSM/UCS2)
 
 ### Table of Contents
