@@ -37,7 +37,7 @@ public class UCS2Charset80 extends Charset {
     private static final String CANONICAL_NAME = "X-UCS2-80";
     private static final String [] ALIASES = {"UCS2-80", "UCS2x80"};
 
-    static final Charset underlyingCharset = UTF_16LE;
+    static final Charset underlyingCharset = UTF_16BE;
     public static int CHARSET_TAG = 0x80;
 
     public UCS2Charset80() {
