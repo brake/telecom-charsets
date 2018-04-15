@@ -4,6 +4,8 @@
 
 A set of Java™ [Charset](https://docs.oracle.com/javase/8/docs/api/java/nio/charset/Charset.html) implementations supporting various codecs used in telecommunications (GSM/UCS2)
 
+[![Changelog](https://img.shields.io/badge/CHANGELOG-Click%20Here-green.svg?longCache=true&style=for-the-badge)](CHANGELOG.md)
+
 ### Table of Contents
 
 * [Purpose](#purpose)
