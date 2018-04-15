@@ -63,7 +63,7 @@ compile 'com.github.brake.threegpp:telecom-charsets:1.0.1'
 
 ## Usage
 
-There are two ways to use this library (see [Note1](#Note1)).
+There are two ways to use this library (see [Note1](#note1)).
 
 1. [Download](https://oss.sonatype.org/service/local/repositories/releases/content/com/github/brake/threegpp/telecom-charsets/1.0.1/telecom-charsets-1.0.1.jar) a precompiled `jar` file and place it to _extension_ directory of your `JRE`.
 
@@ -92,7 +92,7 @@ There are two ways to use this library (see [Note1](#Note1)).
    
 #### Note1
 As mentioned [here](https://docs.oracle.com/javase/8/docs/api/java/lang/String.html#getBytes-java.nio.charset.Charset-)
-'"Some string".getBytes(someCharset)` don't produce exceptions in case of `someCharset` is unable to encode given string.
+`"Some string".getBytes(someCharset)` don't produce exceptions in case of `someCharset` is unable to encode given string.
 In order to take more control over encoding process consider to use class `CharsetEncoder` via `someCharset.newEncoder()`.
 
 ## Licence
