@@ -12,6 +12,7 @@ A set of Java™ [Charset](https://docs.oracle.com/javase/8/docs/api/java/nio/ch
 * [Supported Character Sets](#supported-character-sets)
 * [Requirements](#requirements)
 * [Download](#download)
+* [Dependency Configuration](#dependency-configuration)
 * [Usage](#usage)
 * [License](#license)
 * [Related links](#related-links)
@@ -41,28 +42,30 @@ Java 1.7 or higher.
 
 ## Download
 
-Direct link to [Maven Central](https://oss.sonatype.org/service/local/repositories/releases/content/com/github/brake/threegpp/telecom-charsets/1.0.0/telecom-charsets-1.0.0.jar) for case if we decide to 
+Direct link to [Maven Central](https://oss.sonatype.org/service/local/repositories/releases/content/com/github/brake/threegpp/telecom-charsets/1.0.1/telecom-charsets-1.0.1.jar) for case if we decide to
 use library as described in [Usage, part 1](#usage).
+
+## Dependency Configuration
 
 #### Gradle:
 ```gradle
-compile 'com.github.brake.threegpp:telecom-charsets:1.0.0'
+compile 'com.github.brake.threegpp:telecom-charsets:1.0.1'
 ```
 
 #### Maven:
-```xms
+```xml
 <dependency>
   <groupId>com.github.brake.threegpp</groupId>
   <artifactId>telecom-charsets</artifactId>
-  <version>1.0.0</version>
+  <version>1.0.1</version>
 </dependency>
 ```
 
 ## Usage
 
-There are two ways to use this library.
+There are two ways to use this library (see [Note1](#Note1)).
 
-1. [Download](https://oss.sonatype.org/service/local/repositories/releases/content/com/github/brake/threegpp/telecom-charsets/1.0.0/telecom-charsets-1.0.0.jar) a precompiled `jar` file and place it to _extension_ directory of your `JRE`.
+1. [Download](https://oss.sonatype.org/service/local/repositories/releases/content/com/github/brake/threegpp/telecom-charsets/1.0.1/telecom-charsets-1.0.1.jar) a precompiled `jar` file and place it to _extension_ directory of your `JRE`.
 
    After that you, without further configuration, can just write and run code like this:
    ```java
@@ -77,7 +80,7 @@ There are two ways to use this library.
    - [Apple site (Mac OS specific)](https://developer.apple.com/library/content/qa/qa1170/_index.html) 
    - [One more resource for Mac OS](https://www.quora.com/Where-is-the-jre-lib-ext-folder-found-in-OS-X-for-Java)
    
-1. Configure a _dependency_ in your project as you are usually doing for external libraries ([Gradle](#gradle) or [Maven](#maven))
+1. Configure a [dependency](#dependency-configuration) in your project as you are usually doing for external libraries ([Gradle](#gradle) or [Maven](#maven))
 
    ```java
    import threegpp.charset.ucs2.UCS2Charset80;
@@ -87,6 +90,10 @@ There are two ways to use this library.
 
    ```
    
+#### Note1
+As mentioned [here](https://docs.oracle.com/javase/8/docs/api/java/lang/String.html#getBytes-java.nio.charset.Charset-)
+'"Some string".getBytes(someCharset)` don't produce exceptions in case of `someCharset` is unable to encode given string.
+In order to take more control over encoding process consider to use class `CharsetEncoder` via `someCharset.newEncoder()`.
 
 ## Licence
 
